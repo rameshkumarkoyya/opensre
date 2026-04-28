@@ -48,20 +48,19 @@ def test_run_happy_path() -> None:
         "source": "kafka",
         "available": True,
         "group_id": "payments-consumer",
-        "partition_count": 2,
         "total_lag": 11,
         "partitions": [
             {
                 "topic": "payments",
                 "partition": 0,
-                "current_offset": 120,
+                "committed_offset": 120,
                 "high_watermark": 125,
                 "lag": 5,
             },
             {
                 "topic": "payments",
                 "partition": 1,
-                "current_offset": 98,
+                "committed_offset": 98,
                 "high_watermark": 104,
                 "lag": 6,
             },

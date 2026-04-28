@@ -66,7 +66,10 @@ def test_run_happy_path() -> None:
             }
         ],
     }
-    with patch("app.tools.KafkaTopicHealthTool.get_topic_health", return_value=fake_result) as mock_get_topic_health:
+    with patch(
+        "app.tools.KafkaTopicHealthTool.get_topic_health",
+        return_value=fake_result,
+    ) as mock_get_topic_health:
         result = get_kafka_topic_health(
             bootstrap_servers="localhost:9092",
             topic="orders",
